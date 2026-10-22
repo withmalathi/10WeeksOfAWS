@@ -18,7 +18,8 @@ Malathi Shetty
 
 ## Architecture
 
-![Day 11 S3 Architecture](diagram/day11-architecture-diagram.png)
+
+![Day 11 S3 Architecture](./diagram/day11-architecture-diagram.gif)
 
 ## Result
 
