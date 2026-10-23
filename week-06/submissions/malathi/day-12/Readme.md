@@ -32,6 +32,10 @@ Day 12 demonstrates Amazon S3 replication, object versioning, prefix filtering, 
 
 The static website and Object Lock demonstrations use separate buckets to keep these experiments isolated from the replication buckets.
 
+
+
+![Day 12 Architecture](./diagram/day12-architecture-diagram.png)
+
 ## Result
 
 Successfully completed the main Day 12 Amazon S3 hands-on exercises, including Same-Region Replication, Cross-Region Replication, version history, prefix-based filtering, multipart upload, lifecycle configuration, Object Lock Compliance retention, and static website hosting.
