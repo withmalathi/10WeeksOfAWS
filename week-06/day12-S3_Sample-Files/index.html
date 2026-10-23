@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Day 12 AWS S3 Static Website">
+  <title>Amazon S3 Static Website | Day 12</title>
+
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at top right, #344b69 0%, transparent 45%),
+        linear-gradient(135deg, #101828, #1d2939);
+      color: #f9fafb;
+    }
+
+    main {
+      width: min(760px, 100%);
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid #475467;
+      border-radius: 24px;
+      background: rgba(29, 41, 57, 0.94);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #344054;
+    }
+
+    .brand {
+      color: #f79009;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .day {
+      padding: 7px 12px;
+      border: 1px solid #475467;
+      border-radius: 999px;
+      color: #d0d5dd;
+      font-size: 12px;
+    }
+
+    .eyebrow {
+      margin-top: 32px;
+      color: #fdb022;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0 18px;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    h1 span {
+      color: #f79009;
+    }
+
+    .subtitle {
+      color: #d0d5dd;
+      font-size: clamp(16px, 3vw, 19px);
+      line-height: 1.7;
+    }
+
+    .project-card {
+      margin-top: 30px;
+      padding: 22px;
+      border: 1px solid #344054;
+      border-radius: 16px;
+      background: #182230;
+    }
+
+    .project-card h2 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: #b9c4d3;
+      line-height: 1.8;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 9px 14px;
+      border: 1px solid #05603a;
+      border-radius: 999px;
+      background: #064e3b;
+      color: #d1fadf;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #32d583;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      padding: 16px 12px;
+      border: 1px solid #344054;
+      border-radius: 12px;
+      background: #222f41;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fdb022;
+      font-size: 14px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: #b9c4d3;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #344054;
+      color: #98a2b3;
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="topbar">
+      <div class="brand">◆ AMAZON S3</div>
+      <div class="day">AWS ZERO TO HERO · DAY 12</div>
+    </div>
+
+    <div class="eyebrow">Your cloud storage journey</div>
+
+    <h1>Amazon <span>S3</span><br>Static Website</h1>
+
+    <p class="subtitle">
+      CloudAdhar x TrainWithShubham — AWS Zero To Hero.
+      Learning cloud services by building and testing them hands-on.
+    </p>
+
+    <section class="project-card">
+      <h2>Day 12: S3 Replication, Transfer and Hybrid Storage</h2>
+      <p>
+        This page is hosted on Amazon S3 in the Oregon region.
+        A simple static website, served directly from cloud storage.
+      </p>
+    </section>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      Static website demo
+    </div>
+
+    <section class="features">
+      <div class="feature">
+        <strong>Reliable</strong>
+        <p>Designed for durable object storage.</p>
+      </div>
+      <div class="feature">
+        <strong>Secure</strong>
+        <p>Access controlled with AWS permissions.</p>
+      </div>
+      <div class="feature">
+        <strong>Scalable</strong>
+        <p>Store content as your needs grow.</p>
+      </div>
+    </section>
+
+    <footer>
+      Hands-on AWS learning project<br>
+      Amazon S3 · US West (Oregon) · CloudAdhar x TrainWithShubham
+    </footer>
+  </main>
+</body>
+</html>
